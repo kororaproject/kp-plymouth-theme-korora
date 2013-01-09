@@ -1,14 +1,14 @@
 %define themename korora
 %define set_theme %{_sbindir}/plymouth-set-default-theme
 Name:           plymouth-theme-%{themename}
-Version:        0.5
-Release:        3%{?dist}
+Version:        0.1
+Release:        1%{?dist}
 Summary:        Plymouth Korora Theme
 
 Group:          System Environment/Base
 License:        CC-BY-SA
 URL:            http://kororaproject.org
-Source0:        %{name}-%{version}.tar.gz
+Source0:        %{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 Requires:       plymouth-plugin-two-step >= 0.7.0
