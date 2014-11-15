@@ -1,7 +1,7 @@
 %define themename korora
 %define set_theme %{_sbindir}/plymouth-set-default-theme
 Name:           plymouth-theme-%{themename}
-Version:        0.1
+Version:        0.2
 Release:        1%{?dist}
 Summary:        Plymouth Korora Theme
 
@@ -63,6 +63,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plymouth/themes/%{themename}/%{themename}.plymouth
 
 %changelog
+* Sat Nov 15 2014 Ian Firns <firnsy@kororaproject.org> - 0.2-1
+- Initial spec taken from plymouth-theme-hot-dog
+
 * Thu Jan 03 2013 Chris Smart <csmart@kororaproject.org> - 0.1-1
 - Initial spec taken from plymouth-theme-hot-dog
 
