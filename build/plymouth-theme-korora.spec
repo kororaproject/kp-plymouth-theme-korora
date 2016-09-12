@@ -2,7 +2,7 @@
 %define set_theme %{_sbindir}/plymouth-set-default-theme
 Name:           plymouth-theme-%{themename}
 Version:        0.2
-Release:        1%{?dist}
+Release:        1%{?dist}.3
 Summary:        Plymouth Korora Theme
 
 Group:          System Environment/Base
@@ -33,11 +33,6 @@ install -m 0644 %{themename}.plymouth *.png $targetdir
 export LIB=%{_lib}
 if [ $1 -eq 1 ]; then
     %{set_theme} %{themename}
-fi
-if [ "$(%{set_theme})" == "%{themename}" ]; then
-    %{_libexecdir}/plymouth/plymouth-generate-initrd &>/dev/null
-    source /etc/sysconfig/kernel &>/dev/null || :
-    /sbin/new-kernel-pkg --package ${DEFAULTKERNEL:-kernel} --mkinitrd --depmod --dracut --update $(uname -r)
 fi
 
 %postun
